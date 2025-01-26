@@ -1,0 +1,12 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+button{
+    color: inherit;
+    border-color: inherit;
+}

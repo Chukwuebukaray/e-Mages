@@ -1,0 +1,9 @@
+.darkbtn{
+    position: fixed;
+    top: 2%;
+    left: 1%;
+    padding: 4px;
+    border-radius: 4px;
+    color: inherit;
+    border-color: inherit;
+}
