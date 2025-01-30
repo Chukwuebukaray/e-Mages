@@ -21,8 +21,6 @@ a:hover {
 
 body {
   margin: 0;
-  /* min-width: 320px; */
-  height: 100vh;
   background: #f1eaea;
   color: #020b3e;
   transition: 1s;
