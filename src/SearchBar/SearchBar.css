@@ -24,9 +24,7 @@
 }
 
 .searchbar input {
-    /* padding: 3px;
-    */
-    width: 85%;
+    width: 80%;
     background: #f4f4f4;
     border: none;
     outline: none;
@@ -39,15 +37,24 @@
 }
 
 .searchbar button {
-    width: 15%;
+    width: 20%;
     border-radius: 4px;
     color: #f3f3f4;
     background: #020b3e;
-    /* box-shadow: 1px 1px 2px 1px; */
 }
 
 .searchbar button:hover {
     border-color: #959595;
     transition: all 0.1s ease;
     transform: scale(1.1);
+}
+
+
+/* --------media query-------- */
+
+@media (max-width:600px){
+    .searchbar .input{
+        width: auto;
+        transition: 1s;
+    }
 }
