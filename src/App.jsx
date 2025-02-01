@@ -6,6 +6,7 @@ import axios from "axios";
 import Pagination from "./Pagination/Pagination";
 import SearchBar from "./SearchBar/SearchBar";
 import Footer from "./Footer/Footer";
+import ImageModal from "./ImageModal/ImageModal";
 
 const API_URL = "https://api.unsplash.com/search/photos";
 const IMAGES_PER_PAGE = 20;
@@ -14,6 +15,7 @@ function App() {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [selectedImageId, setSelectedImageId] = useState(null);
 
   const searchInput = useRef(null);
 
@@ -46,21 +48,30 @@ function App() {
   };
 
   const toggleDarkMode = () => {
-    var element = document.body;
-    element.classList.toggle("darkmode");
+    document.body.classList.toggle("darkmode");
+  };
+
+  const handleImageClick = (id) => {
+    setSelectedImageId(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageId(null);
   };
 
   return (
     <>
       <Logo />
       <SearchBar onSubmit={handleSubmit} searchInput={searchInput} />
-      <RenderedImage images={images} />
+      <RenderedImage images={images} onImageClick={handleImageClick} />{" "}
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
       <Footer />
       <button className="darkbtn" onClick={toggleDarkMode}>
         Toggle
       </button>
+      <ImageModal imageId={selectedImageId} onClose={handleCloseModal} />
     </>
   );
 }
+
 export default App;
