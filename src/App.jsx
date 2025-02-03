@@ -67,7 +67,7 @@ function App() {
       <Pagination page={page} setPage={setPage} totalPages={totalPages} />
       <Footer />
       <button className="darkbtn" onClick={toggleDarkMode}>
-        Toggle
+        Toggle mode
       </button>
       <ImageModal imageId={selectedImageId} onClose={handleCloseModal} />
     </>
